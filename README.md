@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AHL Website — American Home Life Insurance Company
+
+Next.js 15 rebuild of amhomelife.com.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Stack
+- **Next.js 15** (App Router)
+- **TypeScript**
+- **CSS Modules** — all styles scoped per component
+- **Google Fonts** — Cormorant Garamond, Montserrat, Courier Prime
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Global Design Tokens
+All colors, spacing, fonts, shadows, and transitions are defined as CSS custom properties in:
+```
+src/app/globals.css
+```
+Change a token once — it updates everywhere.
 
-## Learn More
+## Project Structure
+```
+src/
+  app/
+    globals.css          ← All design tokens & global utilities
+    layout.tsx           ← Root layout + metadata
+    page.tsx             ← Home page
+    page.module.css
+    about/
+      history/
+      locations/
+    products/
+      product.module.css ← Shared product page styles
+      whole-life/
+      term/
+      final-expense/
+      preneed/
+      annuities/
+    claims/
+    contact/
+    get-quote/
+    request-agent/
+  components/
+    layout/
+      Nav.tsx            ← Sticky nav with utility bar + mobile drawer
+      Nav.module.css
+      Footer.tsx
+      Footer.module.css
+      InnerLayout.tsx    ← Shared inner page wrapper
+    ui/
+      Marquee.tsx        ← Scrolling ticker
+      Marquee.module.css
+```
 
-To learn more about Next.js, take a look at the following resources:
+## External Portals (untouched)
+These remain on the Joomla server and are linked externally:
+- Policyholder Sign In: `https://www.amhomelife.com/ahlpolp2/servlet/policyportalentry`
+- Agent Login: `https://www.amhomelife.com/ahlcas/login`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## URL Redirects
+All old Joomla `/index.php/...` URLs redirect automatically via `next.config.ts`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Launch Checklist
+- [ ] Replace `public/favicon.png` with actual AHL favicon
+- [ ] Add actual logo image if desired (or keep CSS mark)
+- [ ] Wire up Get Quote form to backend/email service
+- [ ] Add licensed states list to Locations page
+- [ ] Confirm all phone numbers and contact details
+- [ ] DNS cutover from Joomla to new server

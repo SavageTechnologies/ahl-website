@@ -1,33 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@400;500;600;700&family=Courier+Prime:wght@400;700&display=swap');
+
+/* ── RESET ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── DESIGN TOKENS ─────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Backgrounds */
+  --bg:          #f4f7fb;
+  --bg2:         #edf2f9;
+  --card:        #ffffff;
+  --card-hover:  #f0f5fc;
+
+  /* Brand Blues */
+  --navy:        #1a3a5c;
+  --navy-deep:   #0f2540;
+  --blue:        #2b6cb0;
+  --blue-mid:    #3a7dc9;
+  --blue-light:  #4a90d9;
+  --blue-dim:    rgba(43, 108, 176, 0.08);
+  --blue-glow:   rgba(43, 108, 176, 0.15);
+
+  /* Text */
+  --ink:         #1a2332;
+  --muted:       #5a6a7e;
+  --faint:       #8a9ab0;
+
+  /* Borders */
+  --border:      #d0dae8;
+  --border-light:#e2eaf4;
+
+  /* Utility */
+  --white:       #ffffff;
+  --red:         #c0392b;
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Montserrat', system-ui, sans-serif;
+  --font-mono:    'Courier Prime', 'Courier New', monospace;
+
+  /* Spacing scale */
+  --space-xs:    8px;
+  --space-sm:    16px;
+  --space-md:    24px;
+  --space-lg:    40px;
+  --space-xl:    60px;
+  --space-2xl:   100px;
+
+  /* Radius */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+
+  /* Shadows */
+  --shadow-sm:   0 1px 4px rgba(26,58,92,0.08);
+  --shadow-md:   0 4px 16px rgba(26,58,92,0.12);
+  --shadow-lg:   0 8px 32px rgba(26,58,92,0.16);
+
+  /* Transitions */
+  --ease:        0.25s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── BASE ───────────────────────────────────────────── */
+html {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+body {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Subtle noise texture — same technique as Vanthorpe */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
+  opacity: 0.35;
 }
 
 a {
@@ -35,8 +95,259 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+::selection {
+  background: var(--blue);
+  color: var(--white);
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); }
+::-webkit-scrollbar-thumb:hover { background: var(--blue-mid); }
+
+/* ── GLOBAL UTILITY CLASSES ────────────────────────── */
+
+/* Eyebrow label — used across all sections */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--blue);
+  flex-shrink: 0;
+}
+
+/* Section title */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 3.5vw, 52px);
+  font-weight: 500;
+  line-height: 1.05;
+  color: var(--ink);
+  margin-bottom: 40px;
+  letter-spacing: 0.02em;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--blue);
+}
+
+/* Primary button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--navy);
+  border: 1px solid var(--navy);
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: background var(--ease), color var(--ease), border-color var(--ease);
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+/* Ghost/outline button */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: transparent;
+  border: 1px solid var(--navy);
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: background var(--ease), color var(--ease);
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* White button (for dark backgrounds) */
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: var(--white);
+  border: 1px solid var(--white);
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: background var(--ease), color var(--ease);
+  text-decoration: none;
+}
+
+.btn-white:hover {
+  background: transparent;
+  color: var(--white);
+}
+
+/* Card base */
+.card-base {
+  background: var(--card);
+  border: 1px solid var(--border);
+  transition: box-shadow var(--ease), border-color var(--ease);
+}
+
+.card-base:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--blue-mid);
+}
+
+/* Section wrapper */
+.section {
+  position: relative;
+  z-index: 1;
+  padding: var(--space-2xl) var(--space-xl);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Container max-width */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Page hero band (inner pages) */
+.page-hero {
+  position: relative;
+  z-index: 1;
+  padding: 120px var(--space-xl) 80px;
+  border-bottom: 1px solid var(--border);
+  background: var(--navy);
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(43,108,176,0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.page-hero-eyebrow {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--blue-light);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.page-hero-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--blue-light);
+  flex-shrink: 0;
+}
+
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 72px);
+  font-weight: 500;
+  line-height: 1.05;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  max-width: 700px;
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero h1 em {
+  font-style: italic;
+  color: var(--blue-light);
+}
+
+.page-hero p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.9;
+  max-width: 560px;
+  margin-top: 24px;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Mono label */
+.mono {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--faint);
+  text-transform: uppercase;
+}
+
+/* Prose body text */
+.prose p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+.prose p strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.prose p em {
+  color: var(--blue);
+  font-style: italic;
+}
+
+/* ── RESPONSIVE ────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .section { padding: 80px var(--space-lg); }
+  .page-hero { padding: 100px var(--space-lg) 60px; }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --space-xl: 24px;
+    --space-2xl: 60px;
   }
+  .section { padding: 60px 24px; }
+  .page-hero { padding: 100px 24px 60px; }
+  .section-title { margin-bottom: 28px; }
 }

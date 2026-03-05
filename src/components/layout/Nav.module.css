@@ -1,0 +1,328 @@
+/* ── UTILITY BAR ────────────────────────────────────── */
+.utilityBar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 300;
+  background: var(--navy-deep);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  height: 36px;
+}
+
+.utilityInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  height: 100%;
+}
+
+.utilityPhone {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.5);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.utilityDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--blue-light);
+  animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.utilityLinks {
+  display: flex;
+  gap: 28px;
+}
+
+.utilityLink {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  transition: color var(--ease);
+}
+
+.utilityLink:hover {
+  color: var(--white);
+}
+
+/* ── MAIN NAV ───────────────────────────────────────── */
+.nav {
+  position: fixed;
+  top: 36px; left: 0; right: 0;
+  z-index: 200;
+  background: rgba(244, 247, 251, 0.97);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  height: 72px;
+}
+
+.navInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  height: 100%;
+}
+
+/* ── LOGO ───────────────────────────────────────────── */
+.logoWrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+}
+
+.logoMark {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--navy);
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  transition: border-color var(--ease);
+}
+
+.logoMark:hover {
+  border-color: var(--blue);
+}
+
+.logoMarkInner {
+  width: 14px;
+  height: 14px;
+  background: var(--navy);
+  transition: background var(--ease);
+}
+
+.logoWrap:hover .logoMarkInner {
+  background: var(--blue);
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.logoName {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--navy);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.logoSub {
+  font-size: 7px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ── DESKTOP LINKS ──────────────────────────────────── */
+.links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.linkWrap {
+  position: relative;
+}
+
+.navLink {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--ease);
+}
+
+.navLink:hover {
+  color: var(--navy);
+}
+
+.chevron {
+  font-size: 8px;
+  opacity: 0.5;
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 200px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  z-index: 400;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropItem {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border-light);
+  transition: background var(--ease), color var(--ease);
+}
+
+.dropItem:last-child {
+  border-bottom: none;
+}
+
+.dropItem:hover {
+  background: var(--blue-dim);
+  color: var(--navy);
+}
+
+/* ── CTA BUTTON ─────────────────────────────────────── */
+.cta {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--navy);
+  border: 1px solid var(--navy);
+  padding: 10px 22px;
+  transition: background var(--ease), border-color var(--ease);
+  white-space: nowrap;
+}
+
+.cta:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+/* ── HAMBURGER ──────────────────────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.barTop, .barMid, .barBot {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--navy);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.barTopOpen { transform: translateY(7px) rotate(45deg); }
+.barMidOpen { opacity: 0; }
+.barBotOpen { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── MOBILE DRAWER ──────────────────────────────────── */
+.drawer {
+  position: fixed;
+  top: 108px;
+  left: 0; right: 0;
+  z-index: 190;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 2px;
+}
+
+.drawerLink {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--navy);
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.drawerSub {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 10px 0 10px 16px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.drawerDivider {
+  height: 1px;
+  background: var(--border);
+  margin: 12px 0;
+}
+
+.drawerUtil {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 10px 0;
+}
+
+.drawerCta {
+  margin-top: 16px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--navy);
+  padding: 14px 24px;
+  text-align: center;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .utilityInner { padding: 0 40px; }
+  .navInner { padding: 0 40px; }
+  .links { gap: 0; }
+  .navLink { padding: 8px 10px; letter-spacing: 2px; }
+}
+
+@media (max-width: 768px) {
+  .utilityBar { display: none; }
+  .nav { top: 0; }
+  .navInner { padding: 0 24px; }
+  .links { display: none; }
+  .cta { display: none; }
+  .hamburger { display: flex; }
+  .logoName { font-size: 16px; }
+  .logoMark { width: 28px; height: 28px; }
+  .logoMarkInner { width: 10px; height: 10px; }
+}

@@ -1,0 +1,73 @@
+.body {
+  padding: 80px 60px;
+  border-bottom: 1px solid var(--border);
+}
+
+.prose {}
+
+.proseGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  margin-top: 48px;
+}
+
+.proseText p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+.proseText p strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.proseText p em {
+  color: var(--blue);
+  font-style: italic;
+}
+
+/* Milestones */
+.proseSide {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 1px solid var(--border);
+  padding-left: 40px;
+}
+
+.milestone {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.milestone:last-child {
+  border-bottom: none;
+}
+
+.milestoneYear {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.milestoneText {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+@media (max-width: 1024px) {
+  .body { padding: 60px 40px; }
+  .proseGrid { grid-template-columns: 1fr; gap: 40px; }
+  .proseSide { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 40px; }
+}
+
+@media (max-width: 768px) {
+  .body { padding: 60px 24px; }
+}
