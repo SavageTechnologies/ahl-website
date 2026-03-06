@@ -77,7 +77,7 @@ export default function Home() {
           <div className={styles.heroLine} />
           <div className={styles.heroEyebrow}>Est. 1909 · Topeka, Kansas · Mutual Company</div>
           <h1 className={styles.heroH1}>
-            Trusted for <em>Generations.</em>
+            Trusted for <em>Generations.<sup style={{fontSize: '0.35em', verticalAlign: 'super'}}>®</sup></em>
           </h1>
           <p className={styles.heroSub}>
             The American Home Life Insurance Company has been serving families
@@ -162,7 +162,7 @@ export default function Home() {
               Get Started Today
             </div>
             <blockquote className={styles.quoteText}>
-              "American Home Life has been <em>Trusted for Generations</em>&#8482; and will be here
+              "American Home Life has been <em>Trusted for Generations</em>&reg; and will be here
               for you today and generations to come."
             </blockquote>
             <div className={styles.quoteCtas}>

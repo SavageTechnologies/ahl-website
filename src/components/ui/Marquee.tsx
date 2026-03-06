@@ -1,7 +1,7 @@
 import styles from './Marquee.module.css'
 
 const ITEMS = [
-  'Trusted for Generations™',
+  'Trusted for Generations®',
   'Whole Life Insurance',
   'Est. 1909',
   'Term Life',

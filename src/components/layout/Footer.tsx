@@ -15,7 +15,7 @@ export default function Footer() {
             </div>
           </Link>
           <p className={styles.tagline}>
-            Trusted for Generations.&#8482;<br />
+            Trusted for Generations.&reg;<br />
             Insuring individuals since 1909.<br />
             A mutual company — owned by our policyholders.
           </p>
