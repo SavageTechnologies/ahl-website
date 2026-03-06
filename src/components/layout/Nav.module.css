@@ -18,9 +18,9 @@
 
 .utilityPhone {
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 2px;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.9);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -45,11 +45,11 @@
 }
 
 .utilityLink {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.85);
   transition: color var(--ease);
 }
 
@@ -82,34 +82,6 @@
   align-items: center;
   gap: 16px;
   text-decoration: none;
-}
-
-.logoMark {
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--navy);
-  transform: rotate(45deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  position: relative;
-  transition: border-color var(--ease);
-}
-
-.logoMark:hover {
-  border-color: var(--blue);
-}
-
-.logoMarkInner {
-  width: 14px;
-  height: 14px;
-  background: var(--navy);
-  transition: background var(--ease);
-}
-
-.logoWrap:hover .logoMarkInner {
-  background: var(--blue);
 }
 
 .logoText {

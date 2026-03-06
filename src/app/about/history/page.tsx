@@ -18,7 +18,7 @@ export default function HistoryPage() {
 
         <div className={styles.prose}>
           <div className="eyebrow">Our Story</div>
-          <h2 className="section-title">A Mutual Company.<br /><em>Trusted for Generations.</em></h2>
+          <h2 className="section-title">A Mutual Company.<br /><em>Trusted for Generations.&#8482;</em></h2>
 
           <div className={styles.proseGrid}>
             <div className={styles.proseText}>
@@ -26,7 +26,7 @@ export default function HistoryPage() {
               <p>We are a <strong>mutual company</strong> — owned by our policyholders and operated entirely for their benefit. We are not beholden to stockholders or Wall Street. Our obligations are to the families and communities who trust us.</p>
               <p>Through world wars, the Great Depression, global economic recessions, and natural disasters, American Home Life has remained steadfast in its commitment to policyholders. We have not only endured — we have grown.</p>
               <p>Our financial strength and overall practices are rated <strong>"Secure"</strong> by the most recognized insurance rating organization. We provide life insurance policies, preneed life insurance policies, and annuities for all of life's milestones — providing financial security and risk protection for today and tomorrow.</p>
-              <p>American Home Life has been <em>"Trusted for Generations"</em> and will be here for you today, and for generations to come.</p>
+              <p>American Home Life has been <em>"Trusted for Generations"&#8482;</em> and will be here for you today, and for generations to come.</p>
             </div>
 
             <div className={styles.proseSide}>

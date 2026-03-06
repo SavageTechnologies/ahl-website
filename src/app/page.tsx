@@ -71,7 +71,9 @@ export default function Home() {
 
         {/* ── HERO ─────────────────────────────────────── */}
         <section className={styles.hero}>
-          <div className={styles.heroBgText}>AHL</div>
+          <div className={styles.heroBgLogo} aria-hidden="true">
+            <img src="/logo.svg" alt="" />
+          </div>
           <div className={styles.heroLine} />
           <div className={styles.heroEyebrow}>Est. 1909 · Topeka, Kansas · Mutual Company</div>
           <h1 className={styles.heroH1}>
@@ -160,7 +162,7 @@ export default function Home() {
               Get Started Today
             </div>
             <blockquote className={styles.quoteText}>
-              "American Home Life has been <em>Trusted for Generations</em> and will be here
+              "American Home Life has been <em>Trusted for Generations</em>&#8482; and will be here
               for you today and generations to come."
             </blockquote>
             <div className={styles.quoteCtas}>

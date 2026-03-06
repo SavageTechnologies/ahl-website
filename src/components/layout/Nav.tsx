@@ -60,9 +60,6 @@ export default function Nav() {
         <div className={styles.navInner}>
           {/* Logo */}
           <Link href="/" className={styles.logoWrap}>
-            <div className={styles.logoMark}>
-              <div className={styles.logoMarkInner} />
-            </div>
             <div className={styles.logoText}>
               <span className={styles.logoName}>American Home Life</span>
               <span className={styles.logoSub}>Insurance Company</span>

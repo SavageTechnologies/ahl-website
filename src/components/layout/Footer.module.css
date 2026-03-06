@@ -25,23 +25,6 @@
   text-decoration: none;
 }
 
-.logoMark {
-  width: 30px;
-  height: 30px;
-  border: 1px solid rgba(255,255,255,0.3);
-  transform: rotate(45deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.logoMarkInner {
-  width: 11px;
-  height: 11px;
-  background: var(--blue-light);
-}
-
 .logoText {
   display: flex;
   flex-direction: column;
@@ -63,14 +46,14 @@
   font-weight: 600;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.7);
 }
 
 .tagline {
   font-family: var(--font-display);
   font-size: 14px;
   font-style: italic;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.85);
   line-height: 1.8;
   margin-bottom: 20px;
 }
@@ -79,17 +62,17 @@
   font-family: var(--font-mono);
   font-size: 9px;
   letter-spacing: 1px;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.7);
   line-height: 2;
 }
 
 .address a {
-  color: var(--blue-light);
+  color: var(--white);
   transition: color var(--ease);
 }
 
 .address a:hover {
-  color: var(--white);
+  color: var(--blue-light);
 }
 
 /* Columns */
@@ -103,7 +86,7 @@
   color: var(--blue-light);
   margin-bottom: 24px;
   padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
 .colLinks {
@@ -114,7 +97,7 @@
 
 .colLinks a {
   font-size: 11px;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.8);
   letter-spacing: 1px;
   transition: color var(--ease);
 }
@@ -141,14 +124,14 @@
 .copy {
   font-family: var(--font-mono);
   font-size: 9px;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.7);
   letter-spacing: 2px;
 }
 
 .legal {
   font-family: var(--font-mono);
   font-size: 8px;
-  color: rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.55);
   letter-spacing: 1px;
   line-height: 1.8;
   max-width: 600px;

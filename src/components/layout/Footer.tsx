@@ -9,14 +9,13 @@ export default function Footer() {
         {/* Brand column */}
         <div className={styles.brand}>
           <Link href="/" className={styles.logoWrap}>
-            <div className={styles.logoMark}><div className={styles.logoMarkInner} /></div>
             <div className={styles.logoText}>
               <span className={styles.logoName}>American Home Life</span>
               <span className={styles.logoSub}>Insurance Company</span>
             </div>
           </Link>
           <p className={styles.tagline}>
-            Trusted for Generations.<br />
+            Trusted for Generations.&#8482;<br />
             Insuring individuals since 1909.<br />
             A mutual company — owned by our policyholders.
           </p>
